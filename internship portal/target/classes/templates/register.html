@@ -1,0 +1,94 @@
+<!-- ✅ register.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --primary-color: #4EA685;
+          --gray: #efefef;
+          --gray-2: #757575;
+          --white: #ffffff;
+        }
+        * {
+          font-family: 'Poppins', sans-serif;
+          margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body {
+          height: 100vh; background: var(--gray); display: flex; justify-content: center; align-items: center;
+        }
+        .form-wrapper {
+          background: var(--white);
+          padding: 2rem;
+          border-radius: 1rem;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+          max-width: 400px; width: 100%;
+        }
+        .form {
+          display: flex;
+          flex-direction: column;
+        }
+        .input-group {
+          position: relative;
+          margin-bottom: 1rem;
+        }
+        .input-group i {
+          position: absolute;
+          top: 50%;
+          left: 1rem;
+          transform: translateY(-50%);
+          font-size: 1.2rem;
+          color: var(--gray-2);
+        }
+        .input-group input {
+          width: 100%;
+          padding: 0.8rem 1rem 0.8rem 3rem;
+          border: 1px solid var(--gray);
+          border-radius: 0.5rem;
+        }
+        button {
+          padding: 0.8rem;
+          border: none;
+          background: var(--primary-color);
+          color: var(--white);
+          font-weight: bold;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          margin-top: 1rem;
+        }
+        p {
+          margin-top: 1rem;
+          font-size: 0.9rem;
+          text-align: center;
+        }
+        .pointer { color: var(--primary-color); text-decoration: none; }
+    </style>
+</head>
+<body>
+<div class="form-wrapper">
+    <div class="form sign-up">
+        <form method="post" action="/register">
+            <div class="input-group">
+                <i class='bx bxs-user'></i>
+                <input type="text" name="name" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <i class='bx bx-mail-send'></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class='bx bxs-lock-alt'></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Sign up</button>
+        </form>
+        <p>
+            Already have an account? <a href="/login" class="pointer">Login here</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
